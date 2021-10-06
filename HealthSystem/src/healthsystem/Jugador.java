@@ -7,9 +7,10 @@ class Jugador {
   private int danioGolpe;
 
   //metodos
-  public Jugador(String nom, int daGolpe){
-    nombre = nom;
-    danioGolpe = daGolpe;
+  public Jugador(String nom, int daGolpe, int vidaJ){
+    this.nombre = nom;
+    this.danioGolpe = daGolpe;
+    this.vida = vidaJ;
   }
 
   public int ataque(){
@@ -24,7 +25,10 @@ class Jugador {
     vida = vida + vidaExtra;
   }
 
-  //Get y Set
-  public int getVida(){return vida;}
-  public void setVida(int vida){ this.vida = vida;}
+  public int getvida(){return(this.vida);}
+  public String getnom(){return(this.nombre);}
+  
+  public void setVida(int vida){
+    this.vida = vida;
+  }
 }
