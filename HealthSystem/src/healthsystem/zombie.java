@@ -2,9 +2,9 @@ package healthsystem;
 class zombie {
   //atributos
   private String nombre;
-  private int vida = 50;
-  private int danioRasgunio = 10;
-  private int recibirdanio = 20;
+  private int vida;
+  private int danioRasgunio;
+  //private int recibirdanio = 20;
 
   public zombie(String nom, int vidaZ, int danioZ){
     this.nombre = nom;
@@ -13,11 +13,16 @@ class zombie {
   }
 
   public void recibirdanio(int danio){
-    vida = vida-danio;
+    if(danio > vida){
+      this.vida = 0;
+      System.out.println("La vida de zombie llego hasta 0, Game Over");
+    }else{
+      this.vida = this.vida - danio;
+    }
   }
 
   public int ataque(){
-    return(10);
+    return(danioRasgunio);
   }
 
   public int getvida(){return(this.vida);}
